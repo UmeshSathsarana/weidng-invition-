@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udeshani & Tharindu - White Lotus Luxury Mandala Invitation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        warmWhite: '#FFFFFF',
+                        creamyIvory: '#F9F8F6',
+                        softGold: '#C5A059',
+                        darkGold: '#A37E39',
+                        pureWhite: '#FFFFFF',
+                        darkCharcoal: '#222222',
+                        accentGold: '#D4AF37'
+                    },
+                    fontFamily: {
+                        script: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #222222;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .script-font {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* 3D Gatefold Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+
+        .transition-transform-slow {
+            transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        /* Continuous Rotating Mandala Animation */
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-mandala {
+            animation: spinSlow 90s linear infinite;
+        }
+
+        /* Falling White Petals Animation */
+        @keyframes fall {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.9; }
+            100% { transform: translateY(105vh) translateX(60px) rotate(360deg); opacity: 0; }
+        }
+
+        .petal {
+            position: fixed;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(245,242,235,0.9) 100%);
+            border-radius: 150% 0 150% 0;
+            pointer-events: none;
+            z-index: 40;
+            box-shadow: 0 2px 10px rgba(197, 160, 89, 0.15);
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-warmWhite text-darkCharcoal selection:bg-softGold selection:text-white relative">
+
+    <!-- BACKGROUND MULTIPLE MANDALA WATERMARKS -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-10">
+        <img class="mandala-img absolute -top-32 -left-32 w-96 h-96 spin-mandala" alt="Mandala BG">
+        <img class="mandala-img absolute -top-32 -right-32 w-96 h-96 spin-mandala" alt="Mandala BG">
+        <img class="mandala-img absolute -bottom-32 -left-32 w-96 h-96 spin-mandala" alt="Mandala BG">
+        <img class="mandala-img absolute -bottom-32 -right-32 w-96 h-96 spin-mandala" alt="Mandala BG">
+    </div>
+
+    <!-- Falling Petals Container -->
+    <div id="petals-container"></div>
+
+    <!-- 3D GATEFOLD COVER SCREEN -->
+    <div id="cover-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-darkCharcoal transition-opacity duration-1000">
+        <div class="relative w-full h-full max-w-5xl mx-auto flex perspective-1000 overflow-hidden shadow-2xl">
+            
+            <!-- Left Door -->
+            <div id="left-door" class="w-1/2 h-full bg-creamyIvory border-r border-softGold/30 flex flex-col justify-between p-6 sm:p-12 transform-style-3d origin-left transition-transform-slow z-20 shadow-xl relative overflow-hidden items-center text-center">
+                <div class="text-softGold tracking-widest text-xs sm:text-sm uppercase font-semibold w-full text-left z-20">Wedding Invitation</div>
+                <div class="absolute top-16 sm:top-24 left-0 right-0 px-2 text-center z-20">
+                    <span class="script-font text-2xl sm:text-6xl text-softGold block mb-1">Save</span>
+                    <span class="serif-title text-base sm:text-3xl tracking-widest uppercase text-darkCharcoal font-semibold block">The Date</span>
+                </div>
+                
+                <!-- Left Door Center Line Image Alignment -->
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden w-28 sm:w-40 h-56 sm:h-80 flex justify-end items-center pointer-events-none z-10">
+                    <img src="https://i.pinimg.com/736x/2e/b9/d8/2eb9d858ae07d42ddd8d6d7d60af2a5b.jpg" alt="Mandala Left Half" class="max-w-none w-56 sm:w-80 h-56 sm:h-80 object-cover object-right translate-x-1/2 opacity-90">
+                </div>
+
+                <div class="text-xs text-gray-500 uppercase tracking-widest z-20 w-full text-left">White Lotus Edition</div>
+            </div>
+
+            <!-- Right Door -->
+            <div id="right-door" class="w-1/2 h-full bg-creamyIvory border-l border-softGold/30 flex flex-col justify-between p-6 sm:p-12 transform-style-3d origin-right transition-transform-slow z-20 shadow-xl relative overflow-hidden items-center text-center">
+                <div class="text-softGold tracking-widest text-xs sm:text-sm uppercase font-semibold w-full text-right z-20">2026 . 11 . 25</div>
+               <div class="absolute top-16 sm:top-5 left-0 right-0 px-2 text-center z-20">
+                    <span class="script-font text-2xl sm:text-6xl text-softGold block mb-1">Save</span>
+                    <span class="serif-title text-base sm:text-3xl tracking-widest uppercase text-darkCharcoal font-semibold block">The Date</span>
+                </div>
+                
+                
+                <!-- Right Door Center Line Image Alignment -->
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden w-28 sm:w-40 h-56 sm:h-80 flex justify-start items-center pointer-events-none z-10">
+                    <img src="https://i.pinimg.com/736x/2e/b9/d8/2eb9d858ae07d42ddd8d6d7d60af2a5b.jpg" alt="Mandala Right Half" class="max-w-none w-56 sm:w-80 h-56 sm:h-80 object-cover object-left -translate-x-1/2 opacity-90">
+                </div>
+
+                <div class="text-xs text-gray-500 uppercase tracking-widest z-20 w-full text-right">Sri Lanka</div>
+            </div>
+
+            <!-- Center Seal / Button -->
+            <div id="center-seal" class="absolute inset-0 m-auto z-30 flex flex-col items-center justify-center pointer-events-auto cursor-pointer group" onclick="openInvitation()">
+                <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white border-2 border-softGold shadow-2xl flex flex-col items-center justify-center p-4 transition-transform duration-500 group-hover:scale-105 relative">
+                    <div class="w-12 h-12 rounded-full border border-softGold/40 flex items-center justify-center text-softGold font-serif text-lg font-bold mb-1 shadow-inner">
+                        U &amp; T
+                    </div>
+                    <span id="guest-name-display" class="serif-title text-[11px] sm:text-xs text-center font-semibold text-darkCharcoal max-w-[130px] truncate z-10">Dear Guest</span>
+                    <span class="text-[9px] text-softGold tracking-widest uppercase mt-1 underline font-semibold z-10">Tap to Open</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN INVITATION CONTENT -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-1000 relative z-10">
+
+        <!-- HERO SECTION WITH COUPLE IMAGE -->
+        <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 relative bg-gradient-to-b from-white via-creamyIvory/60 to-white overflow-hidden">
+            <div class="w-48 sm:w-64 mx-auto mb-6 relative z-10">
+                <img id="couple-img" src="" alt="Couple Illustration" class="w-full h-auto object-contain drop-shadow-xl">
+            </div>
+            <p class="text-xs uppercase tracking-[0.3em] text-softGold font-semibold mb-3">Together with their families</p>
+            <h1 class="script-font text-6xl sm:text-8xl text-softGold my-1 tracking-wide drop-shadow-sm">Udeshani &amp; Tharindu</h1>
+            <p class="serif-title text-base sm:text-xl max-w-md mx-auto text-gray-700 leading-relaxed mb-6 px-4 italic">
+                Request the pleasure of your company as they exchange vows and celebrate their union.
+            </p>
+            <div class="inline-block border-y border-softGold/40 py-3 px-8 text-sm sm:text-base tracking-[0.2em] uppercase font-medium text-darkCharcoal mb-8 bg-white/80 backdrop-blur-sm shadow-xs">
+                Wednesday, November 25, 2026
+            </div>
+        </header>
+
+        <!-- BRIDE & GROOM SECTION -->
+        <section class="py-20 px-4 bg-creamyIvory/80 border-y border-softGold/20 relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-xs uppercase tracking-[0.25em] text-softGold font-semibold block mb-2">The Bride &amp; Groom</span>
+                <h2 class="serif-title text-4xl sm:text-5xl font-semibold text-darkCharcoal mb-4">Meet the Couple</h2>
+                <div class="w-16 h-0.5 bg-softGold mx-auto mb-12"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-3xl mx-auto">
+                    <!-- Bride Card -->
+                    <div class="flex flex-col items-center bg-white p-8 rounded-2xl border border-softGold/30 shadow-sm relative group hover:shadow-md transition-all">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-softGold bg-creamyIvory flex items-center justify-center shadow-md mb-6">
+                            <span class="serif-title text-4xl font-bold text-softGold">U</span>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-softGold font-bold mb-1">The Bride</span>
+                        <h3 class="script-font text-4xl text-softGold mb-2">Udeshani Silva</h3>
+                        <p class="text-xs text-gray-600 italic font-serif max-w-xs">"A gentle heart filled with grace, ready to walk hand in hand into forever."</p>
+                    </div>
+
+                    <!-- Groom Card -->
+                    <div class="flex flex-col items-center bg-white p-8 rounded-2xl border border-softGold/30 shadow-sm relative group hover:shadow-md transition-all">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-softGold bg-creamyIvory flex items-center justify-center shadow-md mb-6">
+                            <span class="serif-title text-4xl font-bold text-softGold">T</span>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-softGold font-bold mb-1">The Groom</span>
+                        <h3 class="script-font text-4xl text-softGold mb-2">Tharindu Bandara</h3>
+                        <p class="text-xs text-gray-600 italic font-serif max-w-xs">"A steadfast soul with a warm smile, excited to start this grand chapter."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN SECTION -->
+        <section class="py-16 px-4 bg-white border-b border-softGold/20">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="serif-title text-3xl sm:text-4xl text-darkCharcoal mb-2 font-semibold">Counting Down To Our Day</h2>
+                <p class="text-xs uppercase tracking-widest text-softGold mb-8 font-semibold">November 25, 2026</p>
+                
+                <div id="countdown" class="grid grid-cols-4 gap-3 sm:gap-6 max-w-lg mx-auto">
+                    <div class="bg-creamyIvory p-4 rounded-xl shadow-xs border border-softGold/30">
+                        <span id="days" class="serif-title text-3xl sm:text-4xl font-bold text-softGold block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500">Days</span>
+                    </div>
+                    <div class="bg-creamyIvory p-4 rounded-xl shadow-xs border border-softGold/30">
+                        <span id="hours" class="serif-title text-3xl sm:text-4xl font-bold text-softGold block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500">Hours</span>
+                    </div>
+                    <div class="bg-creamyIvory p-4 rounded-xl shadow-xs border border-softGold/30">
+                        <span id="minutes" class="serif-title text-3xl sm:text-4xl font-bold text-softGold block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500">Minutes</span>
+                    </div>
+                    <div class="bg-creamyIvory p-4 rounded-xl shadow-xs border border-softGold/30">
+                        <span id="seconds" class="serif-title text-3xl sm:text-4xl font-bold text-softGold block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEDDING ITINERARY GRID SECTION -->
+        <section class="py-20 px-4 max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-softGold font-semibold">Program &amp; Schedule</span>
+                <h2 class="serif-title text-4xl sm:text-5xl font-semibold text-darkCharcoal mt-1">Wedding Itinerary</h2>
+                <div class="w-16 h-0.5 bg-softGold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white/80 backdrop-blur-md border border-softGold/30 rounded-2xl p-6 shadow-xs hover:border-softGold transition-all">
+                    <span class="inline-block bg-softGold/10 text-softGold text-xs font-semibold px-3 py-1 rounded-full mb-3 border border-softGold/30">08:30 AM</span>
+                    <h3 class="serif-title text-xl font-bold text-darkCharcoal">Poruwa Ceremony</h3>
+                    <p class="text-xs text-gray-600 mt-2">Traditional Sri Lankan auspicious customs and rituals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAMILY & ENTOURAGE -->
+        <section class="py-20 px-4 bg-creamyIvory/80 border-t border-softGold/20 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-xs uppercase tracking-[0.25em] text-softGold font-semibold block mb-1">Honoured Members</span>
+                    <h2 class="serif-title text-4xl sm:text-5xl font-semibold text-darkCharcoal">Family &amp; Entourage</h2>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mt-2">The Wedding Party</p>
+                    <div class="w-16 h-0.5 bg-softGold mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Bride's Side -->
+                    <div class="bg-white border border-softGold/30 rounded-2xl p-8 shadow-xs">
+                        <div class="text-center pb-6 border-b border-softGold/20 mb-6">
+                            <span class="text-[10px] uppercase tracking-widest text-softGold font-bold">Bride's Side</span>
+                            <h3 class="serif-title text-2xl font-bold text-darkCharcoal">Family &amp; Attendants</h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-softGold/10 border border-softGold/30 flex items-center justify-center text-softGold shrink-0 font-bold">👰</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Parents of the Bride</h4>
+                                    <p class="text-xs text-gray-700 font-medium">Mr. &amp; Mrs. W. A. Silva</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-softGold/10 border border-softGold/30 flex items-center justify-center text-softGold shrink-0 font-bold text-xs">MOH</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Maid of Honour</h4>
+                                    <p class="text-xs text-gray-700 font-medium">Dilini Perera</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-softGold/10 border border-softGold/30 flex items-center justify-center text-softGold shrink-0 font-bold text-xs">✨</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Bridesmaids</h4>
+                                    <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                                        <li>• Kavya Silva</li>
+                                        <li>• Nethmi Fernando</li>
+                                        <li>• Sachini De Silva</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Groom's Side -->
+                    <div class="bg-white border border-softGold/30 rounded-2xl p-8 shadow-xs">
+                        <div class="text-center pb-6 border-b border-softGold/20 mb-6">
+                            <span class="text-[10px] uppercase tracking-widest text-softGold font-bold">Groom's Side</span>
+                            <h3 class="serif-title text-2xl font-bold text-darkCharcoal">Family &amp; Attendants</h3>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-softGold/10 border border-softGold/30 flex items-center justify-center text-softGold shrink-0 font-bold">🤵</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Parents of the Groom</h4>
+                                    <p class="text-xs text-gray-700 font-medium">Mr. &amp; Mrs. K. M. Bandara</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-softGold/10 border border-softGold/30 flex items-center justify-center text-softGold shrink-0 font-bold text-xs">BM</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Best Man</h4>
+                                    <p class="text-xs text-gray-700 font-medium">Kasun Rajapaksha</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-softGold/10 border border-softGold/30 flex items-center justify-center text-softGold shrink-0 font-bold text-xs">🎩</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-darkCharcoal">Groomsmen</h4>
+                                    <ul class="text-xs text-gray-600 mt-1 space-y-1">
+                                        <li>• Nuwan Bandara</li>
+                                        <li>• Chathura Gunasekara</li>
+                                        <li>• Tharindu Wickramasinghe</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENUE LOCATION SECTION -->
+        <section class="py-20 px-4 max-w-4xl mx-auto">
+            <div class="bg-creamyIvory border border-softGold/30 rounded-2xl p-8 sm:p-12 text-center shadow-sm relative overflow-hidden">
+                <span class="text-xs uppercase tracking-[0.25em] text-softGold font-semibold">Location</span>
+                <h3 class="serif-title text-3xl sm:text-4xl font-semibold text-darkCharcoal mt-2 mb-3">Grand Monarch Hotel</h3>
+                <p class="text-sm text-gray-600 mb-6 max-w-md mx-auto">Sri Jayawardenepura Mawatha, Battaramulla, Sri Lanka</p>
+                <a href="https://maps.google.com" target="_blank" class="inline-block bg-darkCharcoal text-white hover:bg-softGold transition-colors px-8 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest shadow-md">
+                    Open in Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- RSVP SECTION -->
+        <section class="py-20 px-4 bg-white border-t border-softGold/20">
+            <div class="max-w-xl mx-auto text-center">
+                <span class="text-xs uppercase tracking-[0.25em] text-softGold font-semibold block mb-2">Be Our Guest</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-semibold text-darkCharcoal mb-3">RSVP Response</h2>
+                <p class="text-sm text-gray-600 mb-8">Please confirm your attendance by November 10, 2026.</p>
+
+                <form id="rsvp-form" onsubmit="handleRSVP(event)" class="bg-creamyIvory p-6 sm:p-10 rounded-2xl border border-softGold/30 shadow-sm text-left space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-600 font-semibold mb-2">Your Full Name</label>
+                        <input type="text" id="rsvp-name" required class="w-full bg-white border border-softGold/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-softGold transition-colors" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-600 font-semibold mb-2">Will you attend?</label>
+                        <select id="rsvp-status" class="w-full bg-white border border-softGold/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-softGold transition-colors">
+                            <option value="Joyfully Accepts (පැමිණේ)">Joyfully Accepts</option>
+                            <option value="Regretfully Declines (නොපැමිණේ)">Regretfully Declines</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-600 font-semibold mb-2">Number of Guests</label>
+                        <select id="rsvp-count" class="w-full bg-white border border-softGold/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-softGold transition-colors">
+                            <option value="1 Guest">1 Guest</option>
+                            <option value="2 Guests">2 Guests</option>
+                            <option value="3 Guests">3 Guests</option>
+                            <option value="4 Guests">4 Guests</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-softGold hover:bg-darkGold text-white py-3.5 rounded-lg text-xs font-semibold uppercase tracking-widest transition-colors shadow-md mt-4 flex items-center justify-center gap-2">
+                        <span>Send via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-12 px-4 text-center bg-creamyIvory border-t border-softGold/20">
+            <h2 class="script-font text-4xl text-softGold mb-1">Udeshani &amp; Tharindu</h2>
+            <p class="text-[10px] tracking-[0.2em] uppercase text-gray-500">2026 . 11 . 25 | Sri Lanka</p>
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const MANDALA_BG_URL = "https://i.pinimg.com/736x/71/15/b0/7115b046299d0cf146d2b5b1f91f31fd.jpg"; 
+        const COUPLE_IMG_URL = "./12.png";
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.mandala-img').forEach(img => {
+                img.src = MANDALA_BG_URL;
+            });
+
+            document.getElementById('couple-img').src = COUPLE_IMG_URL;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('n');
+            if (guestName) {
+                const decodedName = decodeURIComponent(guestName).replace(/[-_+]/g, ' ');
+                document.getElementById('guest-name-display').innerText = 'Dear ' + decodedName;
+            }
+
+            createPetals();
+        });
+
+        function openInvitation() {
+            const leftDoor = document.getElementById('left-door');
+            const rightDoor = document.getElementById('right-door');
+            const centerSeal = document.getElementById('center-seal');
+            const coverScreen = document.getElementById('cover-screen');
+            const mainContent = document.getElementById('main-content');
+
+            leftDoor.style.transform = 'rotateY(-110deg)';
+            rightDoor.style.transform = 'rotateY(110deg)';
+            centerSeal.style.opacity = '0';
+            centerSeal.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                coverScreen.style.opacity = '0';
+                setTimeout(() => {
+                    coverScreen.style.display = 'none';
+                    mainContent.classList.remove('opacity-0');
+                }, 800);
+            }, 600);
+        }
+
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petalCount = 20;
+
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                const size = Math.random() * 10 + 10;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size * 1.5}px`;
+                petal.style.left = `${Math.random() * 100}vw`;
+                petal.style.animationDuration = `${Math.random() * 8 + 6}s`;
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(petal);
+            }
+        }
+
+        const weddingDate = new Date('November 25, 2026 08:30:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-center serif-title text-2xl text-softGold'>The Wedding Day Has Arrived!</div>";
+                return;
+            }
+
+            document.getElementById('days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function handleRSVP(event) {
+            event.preventDefault();
+            const phoneNumber = "94771234567"; 
+
+            const name = document.getElementById('rsvp-name').value;
+            const status = document.getElementById('rsvp-status').value;
+            const count = document.getElementById('rsvp-count').value;
+
+            const message = `*RSVP Response - Udeshani & Tharindu Wedding*%0A%0A` +
+                            `*Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Attendance:* ${encodeURIComponent(status)}%0A` +
+                            `*No. of Guests:* ${encodeURIComponent(count)}`;
+
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
