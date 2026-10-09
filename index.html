@@ -108,46 +108,49 @@
         <div class="relative w-full h-full max-w-5xl mx-auto flex perspective-1000 overflow-hidden shadow-2xl">
             
             <!-- Left Door -->
-            <div id="left-door" class="w-1/2 h-full bg-creamyIvory border-r border-softGold/30 flex flex-col justify-between p-6 sm:p-12 transform-style-3d origin-left transition-transform-slow z-20 shadow-xl relative overflow-hidden items-center text-center">
-                <div class="text-softGold tracking-widest text-xs sm:text-sm uppercase font-semibold w-full text-left z-20">Wedding Invitation</div>
-                <div class="absolute top-16 sm:top-24 left-0 right-0 px-2 text-center z-20">
+            <div id="left-door" class="w-1/2 h-full bg-creamyIvory border-r border-softGold/30 flex flex-col justify-between p-4 sm:p-12 transform-style-3d origin-left transition-transform-slow z-20 shadow-xl relative overflow-hidden items-center text-center">
+                <div class="text-softGold tracking-widest text-[10px] sm:text-sm uppercase font-semibold w-full text-left z-20">Wedding Invitation</div>
+                
+                <!-- Adjusted Save The Date Position (Kelage thallala iddeve) -->
+                <div class="absolute top-20 sm:top-24 left-0 right-0 px-2 text-center z-20">
                     <span class="script-font text-2xl sm:text-6xl text-softGold block mb-1">Save</span>
                     <span class="serif-title text-base sm:text-3xl tracking-widest uppercase text-darkCharcoal font-semibold block">The Date</span>
                 </div>
                 
                 <!-- Left Door Center Line Image Alignment -->
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden w-28 sm:w-40 h-56 sm:h-80 flex justify-end items-center pointer-events-none z-10">
-                    <img src="https://i.pinimg.com/736x/2e/b9/d8/2eb9d858ae07d42ddd8d6d7d60af2a5b.jpg" alt="Mandala Left Half" class="max-w-none w-56 sm:w-80 h-56 sm:h-80 object-cover object-right translate-x-1/2 opacity-90">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden w-24 sm:w-40 h-48 sm:h-80 flex justify-end items-center pointer-events-none z-10">
+                    <img src="https://i.pinimg.com/736x/2e/b9/d8/2eb9d858ae07d42ddd8d6d7d60af2a5b.jpg" alt="Mandala Left Half" class="max-w-none w-48 sm:w-80 h-48 sm:h-80 object-cover object-right translate-x-1/2 opacity-90">
                 </div>
 
-                <div class="text-xs text-gray-500 uppercase tracking-widest z-20 w-full text-left">White Lotus Edition</div>
+                <div class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest z-20 w-full text-left">White Lotus Edition</div>
             </div>
 
             <!-- Right Door -->
-            <div id="right-door" class="w-1/2 h-full bg-creamyIvory border-l border-softGold/30 flex flex-col justify-between p-6 sm:p-12 transform-style-3d origin-right transition-transform-slow z-20 shadow-xl relative overflow-hidden items-center text-center">
-                <div class="text-softGold tracking-widest text-xs sm:text-sm uppercase font-semibold w-full text-right z-20">2026 . 11 . 25</div>
-               <div class="absolute top-16 sm:top-5 left-0 right-0 px-2 text-center z-20">
+            <div id="right-door" class="w-1/2 h-full bg-creamyIvory border-l border-softGold/30 flex flex-col justify-between p-4 sm:p-12 transform-style-3d origin-right transition-transform-slow z-20 shadow-xl relative overflow-hidden items-center text-center">
+                <div class="text-softGold tracking-widest text-[10px] sm:text-sm uppercase font-semibold w-full text-right z-20">2026 . 11 . 25</div>
+                
+                <!-- Adjusted Save The Date Position (Kelage thallala iddeve) -->
+                <div class="absolute top-20 sm:top-24 left-0 right-0 px-2 text-center z-20">
                     <span class="script-font text-2xl sm:text-6xl text-softGold block mb-1">Save</span>
                     <span class="serif-title text-base sm:text-3xl tracking-widest uppercase text-darkCharcoal font-semibold block">The Date</span>
                 </div>
                 
-                
                 <!-- Right Door Center Line Image Alignment -->
-                <div class="absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden w-28 sm:w-40 h-56 sm:h-80 flex justify-start items-center pointer-events-none z-10">
-                    <img src="https://i.pinimg.com/736x/2e/b9/d8/2eb9d858ae07d42ddd8d6d7d60af2a5b.jpg" alt="Mandala Right Half" class="max-w-none w-56 sm:w-80 h-56 sm:h-80 object-cover object-left -translate-x-1/2 opacity-90">
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden w-24 sm:w-40 h-48 sm:h-80 flex justify-start items-center pointer-events-none z-10">
+                    <img src="https://i.pinimg.com/736x/2e/b9/d8/2eb9d858ae07d42ddd8d6d7d60af2a5b.jpg" alt="Mandala Right Half" class="max-w-none w-48 sm:w-80 h-48 sm:h-80 object-cover object-left -translate-x-1/2 opacity-90">
                 </div>
 
-                <div class="text-xs text-gray-500 uppercase tracking-widest z-20 w-full text-right">Sri Lanka</div>
+                <div class="text-[9px] sm:text-xs text-gray-500 uppercase tracking-widest z-20 w-full text-right">Sri Lanka</div>
             </div>
 
             <!-- Center Seal / Button -->
             <div id="center-seal" class="absolute inset-0 m-auto z-30 flex flex-col items-center justify-center pointer-events-auto cursor-pointer group" onclick="openInvitation()">
-                <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-white border-2 border-softGold shadow-2xl flex flex-col items-center justify-center p-4 transition-transform duration-500 group-hover:scale-105 relative">
-                    <div class="w-12 h-12 rounded-full border border-softGold/40 flex items-center justify-center text-softGold font-serif text-lg font-bold mb-1 shadow-inner">
+                <div class="w-32 h-32 sm:w-44 sm:h-44 rounded-full bg-white border-2 border-softGold shadow-2xl flex flex-col items-center justify-center p-3 sm:p-4 transition-transform duration-500 group-hover:scale-105 relative">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-softGold/40 flex items-center justify-center text-softGold font-serif text-base sm:text-lg font-bold mb-1 shadow-inner">
                         U &amp; T
                     </div>
-                    <span id="guest-name-display" class="serif-title text-[11px] sm:text-xs text-center font-semibold text-darkCharcoal max-w-[130px] truncate z-10">Dear Guest</span>
-                    <span class="text-[9px] text-softGold tracking-widest uppercase mt-1 underline font-semibold z-10">Tap to Open</span>
+                    <span id="guest-name-display" class="serif-title text-[10px] sm:text-xs text-center font-semibold text-darkCharcoal max-w-[110px] sm:max-w-[130px] truncate z-10">Dear Guest</span>
+                    <span class="text-[8px] sm:text-[9px] text-softGold tracking-widest uppercase mt-1 underline font-semibold z-10">Tap to Open</span>
                 </div>
             </div>
 
